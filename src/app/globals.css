@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply text-gray-900 dark:text-gray-100 antialiased;
+}
+
+.method-get { @apply bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400; }
+.method-post { @apply bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400; }
+.method-put { @apply bg-amber-50 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400; }
+.method-patch { @apply bg-orange-50 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400; }
+.method-delete { @apply bg-red-50 text-red-700 dark:bg-red-900/30 dark:text-red-400; }
+.method-head { @apply bg-purple-50 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400; }
+.method-options { @apply bg-gray-50 text-gray-600 dark:bg-gray-800 dark:text-gray-400; }

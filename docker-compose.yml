@@ -1,0 +1,24 @@
+services:
+  webhooks:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - webhook-data:/data
+    environment:
+      - PASSWORD=${PASSWORD:-changeme}
+      - BASE_URL=${BASE_URL:-http://localhost:8080}
+      - TZ=${TZ:-UTC}
+      - SESSION_DAYS=${SESSION_DAYS:-7}
+      - SMTP_HOST=${SMTP_HOST:-}
+      - SMTP_PORT=${SMTP_PORT:-587}
+      - SMTP_USER=${SMTP_USER:-}
+      - SMTP_PASS=${SMTP_PASS:-}
+      - SMTP_FROM=${SMTP_FROM:-}
+      - RETENTION_DAYS=${RETENTION_DAYS:-30}
+      - MAX_BODY_KB=${MAX_BODY_KB:-100}
+      - DB_PATH=/data/webhook.db
+    restart: unless-stopped
+
+volumes:
+  webhook-data:
